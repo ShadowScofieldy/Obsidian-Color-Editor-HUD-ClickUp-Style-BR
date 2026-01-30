@@ -1,0 +1,292 @@
+/* =========================
+   CORES BASE (você pode ajustar os HEX depois)
+   ========================= */
+:root{
+  --cu-green:  #22c55e;
+  --cu-yellow: #facc15;
+  --cu-red:    #ef4444;
+  --cu-blue:   #3b82f6;
+  --cu-cyan:   #06b6d4;  /* ADICIONADO: Azul Ciano */
+  --cu-gray:   #9ca3af;
+  --cu-pink:   #ec4899;
+  --cu-purple: #a855f7;
+  --cu-orange: #f97316;
+  --cu-white:  #ffffff;
+
+  /* badge */
+  --cu-badge-text: #ffffff;
+}
+
+/* =========================
+   TEXTO COLORIDO (c-*)
+   ========================= */
+.c-green  { color: var(--cu-green) !important; }
+.c-yellow { color: var(--cu-yellow) !important; }
+.c-red    { color: var(--cu-red) !important; }
+.c-blue   { color: var(--cu-blue) !important; }
+.c-cyan   { color: var(--cu-cyan) !important; }  /* ADICIONADO: Texto ciano */
+.c-gray   { color: var(--cu-gray) !important; }
+.c-pink   { color: var(--cu-pink) !important; }
+.c-purple { color: var(--cu-purple) !important; }
+.c-orange { color: var(--cu-orange) !important; }
+
+/* =========================
+   MARCA-TEXTO (hl-*)
+   ========================= */
+.hl-green, .hl-yellow, .hl-red, .hl-blue, .hl-cyan, .hl-gray, .hl-pink, .hl-purple, .hl-orange, .hl-white{
+  padding: 0.05em 0.25em;
+  border-radius: 2px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.hl-green  { background: color-mix(in srgb, var(--cu-green) 55%, transparent) !important; }
+.hl-yellow { background: color-mix(in srgb, var(--cu-yellow) 55%, transparent) !important; }
+.hl-red    { background: color-mix(in srgb, var(--cu-red) 55%, transparent) !important; }
+.hl-blue   { background: color-mix(in srgb, var(--cu-blue) 55%, transparent) !important; }
+.hl-cyan   { background: color-mix(in srgb, var(--cu-cyan) 55%, transparent) !important; }  /* ADICIONADO: HL ciano */
+.hl-gray   { background: color-mix(in srgb, var(--cu-gray) 55%, transparent) !important; }
+.hl-pink   { background: color-mix(in srgb, var(--cu-pink) 55%, transparent) !important; }
+.hl-purple { background: color-mix(in srgb, var(--cu-purple) 55%, transparent) !important; }
+.hl-orange { background: color-mix(in srgb, var(--cu-orange) 55%, transparent) !important; }
+.hl-white  { background: color-mix(in srgb, var(--cu-white) 22%, transparent) !important; }
+
+/* (opcional) garantir contraste em marca-texto claro */
+.hl-yellow, .hl-white { color: var(--text-normal) !important; }
+
+/* =========================
+   BADGES (badge-*) - ESTILO CLICKUP ATUALIZADO
+   ========================= */
+.badge-green, .badge-yellow, .badge-red, .badge-blue, .badge-cyan, .badge-gray, .badge-pink, .badge-purple, .badge-orange, .badge-white {
+  display: inline-block;
+  padding: 0.15em 0.75em !important;
+  border-radius: 6px !important; /* ESTILO PILL - CLICKUP */
+  font-weight: 750 !important;
+  font-size: 0.80em !important;
+  line-height: 1.4 !important;
+  color: var(--cu-badge-text) !important;
+  border: 1px solid rgba(0,0,0,0.35) !important;
+  text-shadow: 0 0px 0 rgba(0,0,0,0.35) !important;
+  -webkit-box-decoration-break: clone !important;
+  box-decoration-break: clone !important;
+  text-transform: uppercase !important; /* TEXTO EM CAIXA ALTA */
+  letter-spacing: 0.3px !important;
+  white-space: nowrap !important;
+  height: auto !important;
+  min-height: 20px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Cores específicas estilo ClickUp - mais vibrantes */
+.badge-green  { 
+  background: #22c55e !important;
+  border-color: #16a34a !important;
+}
+
+.badge-yellow { 
+  background: #facc15 !important;
+  color: #111 !important;
+  text-shadow: none !important;
+  border-color: rgba(0,0,0,0.25) !important;
+}
+
+.badge-red    { 
+  background: #ef4444 !important;
+  border-color: #dc2626 !important;
+}
+
+.badge-blue   { 
+  background: #3b82f6 !important;
+  border-color: #2563eb !important;
+}
+
+.badge-cyan   { 
+  background: #06b6d4 !important;
+  border-color: #0891b2 !important;
+}
+
+.badge-gray   { 
+  background: #6b7280 !important;
+  border-color: #4b5563 !important;
+}
+
+.badge-pink   { 
+  background: #ec4899 !important;
+  border-color: #db2777 !important;
+}
+
+.badge-purple { 
+  background: #a855f7 !important;
+  border-color: #9333ea !important;
+}
+
+.badge-orange { 
+  background: #f97316 !important;
+  border-color: #ea580c !important;
+}
+
+.badge-white {
+  background: var(--cu-white) !important;
+  color: #000000 !important;
+  border: 1px solid rgba(0,0,0,0.25) !important;
+  text-shadow: none !important;
+}
+
+/* =========================
+   UI DA PALETA (modal)
+   ========================= */
+/* mais compacto */
+.paleta-clickup{
+  padding: 10px;
+  min-width: 340px;
+}
+
+.paleta-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom: 10px;
+}
+.paleta-title{
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.paleta-sec{ margin-top: 10px; }
+.paleta-sec-title{
+  font-size: 12px;
+  opacity: .85;
+  margin-bottom: 6px;
+}
+
+.paleta-row{
+  display:flex;
+  gap:6px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.paleta-btn{
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: var(--background-secondary);
+  cursor: pointer;
+  padding: 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+/* Botões da paleta ajustados para estilo ClickUp */
+.paleta-text{ border-radius: 7px; }
+.paleta-hl{ border-radius: 999px; }
+.paleta-badge{ 
+  border-radius: 10px !important; /* ESTILO PILL */
+  width: auto !important;
+  min-width: 26px !important;
+  height: 20px !important;
+  padding: 0 8px !important;
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+}
+
+.paleta-clear{
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  opacity:.85;
+}
+
+.paleta-footer{ margin-top: 12px; }
+.paleta-remove{
+  width: 100%;
+  padding: 9px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: var(--background-secondary);
+  cursor: pointer;
+}
+
+/* HUD flutuante (popup leve) */
+.paleta-hud{
+  position: fixed;
+  z-index: 9999;
+  background: var(--background-primary);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  min-width: 320px;
+}
+
+.paleta-hud .paleta-sec{ margin-top: 8px; }
+.paleta-hud .paleta-sec-title{ margin-bottom: 5px; }
+
+/* =========================
+   ÁREA DE RECENTES NA PALETA
+   ========================= */
+.paleta-recentes {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 4px !important;
+  margin-bottom: 8px;
+}
+
+/* Itens recentes estilo badge ClickUp */
+.recente-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 12px !important;
+  padding: 2px 8px !important;
+  font-size: 10px !important;
+  height: 18px !important;
+  min-height: 18px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.3px !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  background: var(--background-secondary) !important;
+  color: var(--text-normal) !important;
+  cursor: pointer !important;
+  transition: all 0.1s ease !important;
+}
+
+.recente-badge:hover {
+  border-color: rgba(255,255,255,.35) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* =========================
+   AJUSTES PARA TEMA CLARO
+   ========================= */
+.theme-light .paleta-btn {
+  border: 1px solid rgba(0,0,0,.12) !important;
+  background: var(--background-secondary) !important;
+}
+
+.theme-light .paleta-remove {
+  border: 1px solid rgba(0,0,0,.12) !important;
+  background: var(--background-secondary) !important;
+}
+
+.theme-light .recente-badge {
+  border: 1px solid rgba(0,0,0,.12) !important;
+  background: var(--background-secondary) !important;
+}
+
+.theme-light .recente-badge:hover {
+  border-color: rgba(0,0,0,.25) !important;
+}
+
+.theme-light .paleta-hud {
+  border: 1px solid rgba(0,0,0,.12) !important;
+  background: var(--background-primary) !important;
+}

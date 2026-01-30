@@ -1,0 +1,421 @@
+/* ==============================
+   HUD TOOLBAR + POPOVER PALETA
+   ============================== */
+
+/* HUD BAR PRINCIPAL - MINIMALISTA */
+.hudbar {
+  position: fixed;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 6px;
+
+  background: rgba(30, 30, 35, 0.65) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 10px !important;
+  
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  animation: hudAppear 0.1s ease !important;
+  
+  font-family: var(--font-interface);
+  user-select: none;
+}
+
+.theme-light .hudbar {
+  background: rgba(245, 245, 245, 0.7) !important;
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+}
+
+/* BOTÕES DA HUD - INVISÍVEIS ATÉ HOVER */
+.hudbtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  
+  border: 1px solid transparent !important;
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.3) !important;
+  
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 12px;
+  
+  transition: all 0.15s ease !important;
+}
+
+.theme-light .hudbtn {
+  color: rgba(0, 0, 0, 0.25) !important;
+}
+
+.hudbtn:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+.theme-light .hudbtn:hover {
+  background: rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.hudbtn.active {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.theme-light .hudbtn.active {
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.hudbtn.active:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+.hudbtn.wide {
+  width: auto;
+  padding: 0 8px;
+  font-weight: 500;
+  font-size: 11px;
+}
+
+/* PARA IMAGEM DO BOTÃO CENTRALIZAR */
+.hudbtn:nth-child(5) img {
+  width: 16px !important;
+  height: 16px !important;
+  display: block !important;
+  margin: 0 auto !important;
+  opacity: 0.7 !important;
+  filter: invert(1) brightness(0.8) !important;
+  transition: all 0.15s ease !important;
+}
+
+.hudbtn:nth-child(5):hover img {
+  opacity: 1 !important;
+  filter: invert(1) brightness(1) !important;
+}
+
+.theme-light .hudbtn:nth-child(5) img {
+  filter: invert(0) brightness(0.3) !important;
+}
+
+.theme-light .hudbtn:nth-child(5):hover img {
+  filter: invert(0) brightness(0.1) !important;
+}
+
+.hudsep {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 0 1px;
+}
+
+.theme-light .hudsep {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+@keyframes hudAppear {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   POPOVER DA PALETA DE CORES
+   ============================================ */
+
+.hud-pop {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 340px;
+
+  background: #1e1f22;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.60);
+
+  padding: 10px 12px 12px 12px;
+  display: none;
+}
+
+.hud-pop.open { display: block; }
+
+.hudtitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.hudtitle-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.hud-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #f472b6;
+  box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.15);
+}
+
+.hud-close {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #2a2b2f;
+  color: #e5e7eb;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.hud-close:hover { background: #34363b; }
+
+/* SEÇÃO DE RECENTES UNIFICADA */
+.hud-sec {
+  margin-top: 10px;
+}
+
+.hud-sec-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+/* Container dos recentes - grid 2x4 MAIS COMPACTO */
+.hud-recentes-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 3px;
+  margin-bottom: 8px;
+}
+
+/* Cada item recente - 50% MENOR */
+.recente-item {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #2a2b2f;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 9px;
+  color: #e5e7eb;
+  transition: all 0.1s ease;
+  min-height: 0;
+}
+
+.recente-item:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+}
+
+/* Para itens de texto */
+.recente-item.texto { 
+  font-weight: 700;
+  background: transparent !important;
+  font-size: 8px;
+}
+
+/* Para itens de destaque */
+.recente-item.highlight { 
+  border-radius: 999px;
+  font-size: 0;
+}
+
+/* Para itens de badge */
+.recente-item.badge { 
+  font-size: 0;
+  font-weight: 700;
+}
+
+/* Seção das cores principais */
+.hud-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+/* Botões da paleta principal */
+.pbtn {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #2a2b2f;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.pbtn:hover { border-color: rgba(255, 255, 255, 0.28); }
+.pbtn.active { outline: 2px solid rgba(255, 255, 255, 0.85); }
+
+.pbtn.t { background: transparent; }
+.pbtn.hl { border-radius: 999px; }
+.pbtn.bd { border-radius: 7px; }
+
+/* Botão limpar recentes */
+.hud-clear-recentes {
+  width: 100%;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(42, 43, 47, 0.5);
+  color: #9ca3af;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 4px;
+  transition: all 0.15s ease;
+}
+
+.hud-clear-recentes:hover {
+  background: rgba(42, 43, 47, 0.8);
+  color: #e5e7eb;
+}
+
+/* Ajuste para temas claros */
+.theme-light .hud-pop {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.theme-light .hud-close {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.theme-light .hud-close:hover {
+  background: #e5e7eb;
+}
+
+.theme-light .hud-sec-title {
+  color: #6b7280;
+}
+
+.theme-light .recente-item {
+  background: #f9fafb;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #374151;
+}
+
+.theme-light .recente-item:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+  background: #f3f4f6;
+}
+
+.theme-light .pbtn {
+  background: #f9fafb;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.theme-light .pbtn:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.theme-light .hud-clear-recentes {
+  background: #f9fafb;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #6b7280;
+}
+
+.theme-light .hud-clear-recentes:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* ============================================
+   UTILITÁRIOS
+   ============================================ */
+
+.hud-remove-mini {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #2a2b2f;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .9;
+  margin-left: 2px;
+}
+
+.hud-remove-mini:hover { background: #34363b; opacity: 1; }
+
+.hud-clear {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #2a2b2f;
+  color: #e5e7eb;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+}
+
+.hud-clear:hover { background: #34363b; }
+
+.hud-help {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #9ca3af;
+  opacity: .9;
+}
+
+.center { display: block; width: 100%; text-align: center; margin: 10px 0; }
+.center-inline { display: inline-block; text-align: center; }
+
+.fs-12 { font-size: 12px; } .fs-14 { font-size: 14px; } .fs-16 { font-size: 16px; }
+.fs-18 { font-size: 18px; } .fs-20 { font-size: 20px; } .fs-24 { font-size: 24px; }
+.fs-28 { font-size: 28px; } .fs-32 { font-size: 32px; }
+
+.faixa { display: block; width: 100%; padding: 14px; border-radius: 10px; text-align: center; font-weight: 900; margin: 14px 0; }
+.faixa-amarela { background: #facc15; color: #111; }
+.faixa-azul { background: #3b82f6; color: #fff; }
+.faixa-verde { background: #22c55e; color: #111; }
+.faixa-vermelha { background: #ef4444; color: #fff; }
+.faixa-laranja { background: #f97316; color: #111; }
+.faixa-roxa { background: #a855f7; color: #fff; }
+.faixa-rosa { background: #ec4899; color: #fff; }
+.faixa-cinza { background: #9ca3af; color: #111; }

@@ -1,4 +1,37 @@
-🇧🇷 Versão em Português
+
+PREVIEW TOOLBAR
+
+![PREVIEW](assets/toolbar2.png)
+
+
+
+
+
+
+
+
+
+
+
+
+![PREVIEW](assets/toolbar.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**🇧🇷 Versão em Português**
+
 Obsidian Editor HUD (Estilo ClickUp)
 Uma barra de ferramentas flutuante, minimalista e poderosa para o Obsidian, inspirada na paleta de cores e produtividade do ClickUp.
 
@@ -24,7 +57,15 @@ Melhore o código ou o design.
 
 Mande um Pull Request. Qualquer ajuda para aperfeiçoar a ferramenta é muito bem-vinda!
 
-🇺🇸 English Version
+
+
+
+
+
+
+
+**🇺🇸 English Version**
+
 Obsidian Editor HUD (ClickUp Style)
 A minimalist and powerful floating toolbar for Obsidian, inspired by ClickUp's productivity-focused color palette and UI.
 
@@ -49,3 +90,60 @@ Fork the repo.
 Improve the code or the UI/UX.
 
 Submit a Pull Request. Any contribution to make this tool better for the community is highly appreciated!
+
+
+**🇧🇷 Como Instalar**
+
+Para o correto funcionamento do HUD e de todas as suas funcionalidades de formatação (badges, highlights, etc.), siga os passos abaixo:
+
+1. Configuração do CSS (Estilos)
+Baixe o arquivo cores-basicas.css.
+
+No seu vault do Obsidian, navegue até a pasta oculta .obsidian/snippets.
+
+Cole o arquivo cores-basicas.css lá.
+
+No Obsidian, vá em Configurações > Aparência e, na seção Snippets de CSS, ative o arquivo cores-basicas.
+
+2. Configuração dos Scripts (Lógica)
+O sistema utiliza um script principal para o HUD e diversos mini-scripts auxiliares para aplicar as cores e estilos.
+
+Crie uma pasta chamada scripts na raiz do seu vault (caso ainda não exista).
+
+Baixe o arquivo editor-hud.js e todos os outros arquivos .js (os mini-scripts de badges, highlights e cores) e coloque-os dentro dessa pasta scripts.
+
+Para usuários do Templater:
+
+Configure a pasta de scripts em Settings > Templater > User Script Functions.
+
+O HUD principal (editor-hud.js) invocará os mini-scripts conforme necessário para aplicar as formatações.
+
+O HUD aparecerá automaticamente sempre que você selecionar um texto no editor.
+
+**🇺🇸 How to Install**
+
+To ensure the HUD and all its formatting features (badges, highlights, etc.) work correctly, follow these steps:
+
+1. CSS Setup (Styles)
+Download the cores-basicas.css file.
+
+In your Obsidian vault, navigate to the hidden folder .obsidian/snippets.
+
+Paste the cores-basicas.css file there.
+
+In Obsidian, go to Settings > Appearance, find the CSS Snippets section, and toggle the switch for cores-basicas.
+
+2. Scripts Setup (Logic)
+The system uses a main HUD script and several auxiliary mini-scripts to apply colors and styles.
+
+Create a folder named scripts at the root of your vault (if it doesn't already exist).
+
+Download the editor-hud.js file and all other .js files (the mini-scripts for badges, highlights, and colors) and place them inside this scripts folder.
+
+For Templater users:
+
+Define your scripts folder in Settings > Templater > User Script Functions.
+
+The main HUD (editor-hud.js) will invoke the mini-scripts as needed to apply the formatting.
+
+The HUD will automatically appear whenever you select text within the editor.
